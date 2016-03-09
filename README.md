@@ -1,4 +1,4 @@
-# company-service
+# Assignment
 
 This project contains two module
 
