@@ -8,11 +8,13 @@ This project contains two module
 - client
   - AngularJS client
 
-### Create Page
-![screenshot](https://cloud.githubusercontent.com/assets/17736798/13641975/a4d4e79a-e640-11e5-9ce6-c4b1ac1f90aa.png)
+### Create Company
+![screenshot](https://cloud.githubusercontent.com/assets/17736798/13641998/bdb6f802-e640-11e5-8b38-578e9ee7b54f.png)
+
 
 ### Update Company
-![screenshot](https://cloud.githubusercontent.com/assets/17736798/13641998/bdb6f802-e640-11e5-8b38-578e9ee7b54f.png)
+![screenshot](https://cloud.githubusercontent.com/assets/17736798/13641975/a4d4e79a-e640-11e5-9ce6-c4b1ac1f90aa.png)
+
   # Overview
 
   Create a tiny REST / JSON web service in Java using a framework (e.g. Spark, Spring MVC
