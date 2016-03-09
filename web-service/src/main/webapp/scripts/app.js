@@ -13,18 +13,25 @@ angular
     'ngRoute'
   ])
   .config(function ($routeProvider) {
-    $routeProvider
+      $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        controller: 'CompanyController'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/company/details/:name', {
+        templateUrl: 'views/company-details.html',
+        controller: 'CompanyController'
+      })
+      .when('/save', {
+        templateUrl: 'views/main.html',
+        controller: 'CompanyController'
+      })
+      .when('/update', {
+        templateUrl: 'views/company-details.html',
+        controller: 'CompanyController'
       })
       .otherwise({
         redirectTo: '/'
       });
+
   });

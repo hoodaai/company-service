@@ -146,8 +146,9 @@ curl -i -X PUT -H "Content-Type:application/json" -d '{  "name" : "Healthkart", 
  - Add beneficial user
  
   ```
-  curl -i -X POST -H "Content-Type:application/json" -d '{  "name" : "Frodo" }' http://localhost:8080/api/company/google
+  curl -i -X POST -H "Content-Type:application/json" -d '{  "userName" : "Frodo" }' http://localhost:8080/api/company/google
   ```
+  - get beneficial owner
   
   TODO:
   Unit test

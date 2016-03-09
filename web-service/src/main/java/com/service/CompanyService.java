@@ -20,5 +20,5 @@ public interface CompanyService {
 
     void updateCompany(Company company);
 
-    void saveBeneficialOwner(String companyName, BeneficialOwnerDTO beneficialOwner);
+    void saveBeneficialOwner(Integer companyId, BeneficialOwnerDTO beneficialOwner);
 }

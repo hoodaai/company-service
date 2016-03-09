@@ -63,10 +63,10 @@ public class CompanyServiceImpl implements CompanyService{
     }
 
     @Override
-    public void saveBeneficialOwner(String companyName, BeneficialOwnerDTO beneficialOwner) {
-        companyRepository.findByName(companyName).ifPresent(company -> {
+    public void saveBeneficialOwner(Integer companyId, BeneficialOwnerDTO beneficialOwner) {
+        companyRepository.findByCompanyId(companyId).ifPresent(company -> {
             BeneficialOwner bo = new BeneficialOwner();
-            bo.setName(beneficialOwner.getUserName());
+            bo.setName(beneficialOwner.getName());
             bo.setCompany(company);
             List beneficialList = new ArrayList<>();
             beneficialList.add(bo);

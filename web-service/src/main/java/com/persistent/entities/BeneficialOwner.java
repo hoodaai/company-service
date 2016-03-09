@@ -15,7 +15,8 @@ public class BeneficialOwner {
 
     private String name;
 
-    @ManyToOne(cascade=CascadeType.ALL)
+    @ManyToOne(cascade={CascadeType.PERSIST})
+
     @JoinColumn(name="company_id", nullable=false)
     @JsonBackReference
     private Company company;
@@ -42,5 +43,14 @@ public class BeneficialOwner {
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    @Override
+    public String toString() {
+        return "BeneficialOwner{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", company=" + company +
+                '}';
     }
 }

@@ -68,6 +68,9 @@ public class Company {
         return companyId;
     }
 
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
+    }
 
     public String getName() {
         return name;
@@ -125,5 +128,17 @@ public class Company {
         this.beneficialOwner = beneficialOwner;
     }
 
-
+    @Override
+    public String toString() {
+        return "Company{" +
+                "companyId=" + companyId +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", beneficialOwner=" + beneficialOwner +
+                '}';
+    }
 }

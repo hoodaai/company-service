@@ -14,4 +14,5 @@ public interface CompanyRepository extends JpaRepository<Company, Long> {
 
     Optional<Company> findByName(@Param("name") String name);
     Optional<Company> findByEmail(@Param("email") String email);
+    Optional<Company> findByCompanyId(@Param("name") Integer id);
 }

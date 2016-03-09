@@ -1,5 +1,6 @@
 package com.rest;
 
+import com.persistent.entities.BeneficialOwner;
 import com.persistent.entities.Company;
 import com.persistent.repositories.CompanyRepository;
 import com.rest.dto.BeneficialOwnerDTO;
@@ -60,11 +61,11 @@ public class CompanyResource {
     public ResponseEntity<List<Company>> getAllCompany(Pageable pageable)
         throws URISyntaxException {
             Page<Company> page = companyService.findAllCompanies(pageable);
-            List<Company> managedUserDTOs = page.getContent().stream()
-                    .map(user -> new Company(user))
+            List<Company> companyList = page.getContent().stream()
+                    .map(company -> new Company(company))
                     .collect(Collectors.toList());
             HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/companies");
-            return new ResponseEntity<>(managedUserDTOs, headers, HttpStatus.OK);
+            return new ResponseEntity<>(companyList, headers, HttpStatus.OK);
 
     }
 
@@ -86,7 +87,6 @@ public class CompanyResource {
      */
     @RequestMapping(value = "/company", method = RequestMethod.PUT)
     public ResponseEntity<?> updateCompany(@RequestBody Company company){
-
         Optional<Company> existingCompany = companyService.getByName(company.getName());
 
         if(!existingCompany.isPresent()) {
@@ -94,6 +94,7 @@ public class CompanyResource {
                     "companynotexists", "Company does not exist")).body(null);
         }
 
+        company.setBeneficialOwner(null);
         return companyRepository
                 .findByName(company.getName())
                 .map(u -> {
@@ -107,12 +108,12 @@ public class CompanyResource {
      * add beneficial owner(s) of the company
      * @return
      */
-    @RequestMapping(value = "/company/{companyName}", method = RequestMethod.POST)
+    @RequestMapping(value = "/company/{companyId}", method = RequestMethod.POST)
     public ResponseEntity<?> saveBeneficialOwner(@RequestBody BeneficialOwnerDTO beneficialOwner,
-                                                 @PathVariable String companyName){
+                                                 @PathVariable Integer companyId){
 
         try {
-            companyService.saveBeneficialOwner(companyName, beneficialOwner);
+            companyService.saveBeneficialOwner(companyId, beneficialOwner);
         }catch (Exception e){
             logger.error(e.getMessage());
             new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
