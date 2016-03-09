@@ -16,7 +16,7 @@ This project contains two module
 ![screenshot](https://cloud.githubusercontent.com/assets/17736798/13641975/a4d4e79a-e640-11e5-9ce6-c4b1ac1f90aa.png)
 
  
- # Overview
+# Overview
 
   Create a tiny REST / JSON web service in Java using a framework (e.g. Spark, Spring MVC
   (RestController) or similar) with an API that supports the following:
@@ -39,14 +39,14 @@ This project contains two module
   - One or more beneficial owner(s)
 
 
-  # Features
+# Features
 
   - Integration with database migration tool- [FlyWay](http://flywaydb.org/)
   - RESTful APIs using Spring Boot
   - Database- In memory H2 database.
   - Unit Testing- Junit, EasyMock, H2 database and Spring Test Suite
 
-  # Technologies used
+# Technologies used
    - Java
    - Spring Boot
    - Hibernate
@@ -54,10 +54,10 @@ This project contains two module
    - Gradle
    - Flyway
 
-  # Setting up development environment (On Ubuntu)
+# Setting up development environment (On Ubuntu)
   Instructions to install and configure any prerequisites for the development environment
 
-  ## Installing Java
+## Installing Java
 
    - sudo apt-get install python-software-properties
 
@@ -83,7 +83,7 @@ This project contains two module
       export JRE_HOME
       export PATH
   ```
-  ## Installing Gradle
+## Installing Gradle
 
    - download gradle binary distribution from http://gradle.org/gradle-download/
 
@@ -93,19 +93,19 @@ This project contains two module
 
       - export GRADLE_HOME=/opt/gradle
 
-  ## Database Setup
+## Database Setup
 
   This project uses in memory H2 database for local setup.
 
 
-  ## Database migration
+## Database migration
 
    - All database migration scripts are available in db/migration directory within project.
 
    - This project has FlyWay integrated, so you don't need to run db migration scripts manually. Flyway will automatically
    run those scripts at the time of server startup.
 
-  # Running
+# Running
 
     - You can run this project from the command-line from the root directory(web-service) of project:
 
@@ -131,7 +131,7 @@ This project contains two module
 
 
 
-  # Curl Commands
+# Curl Commands
 
    - Create company
 
