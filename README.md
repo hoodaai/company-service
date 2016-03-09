@@ -7,6 +7,11 @@ This project contains two module
 
 - client
   - AngularJS client
+  
+
+# Live demo
+  
+  [https://shrouded-tundra-33950.herokuapp.com/#/](https://shrouded-tundra-33950.herokuapp.com/#/)
 
 ### Create Company
 ![screenshot](https://cloud.githubusercontent.com/assets/17736798/13641998/bdb6f802-e640-11e5-8b38-578e9ee7b54f.png)
